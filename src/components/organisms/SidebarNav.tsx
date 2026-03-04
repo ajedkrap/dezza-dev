@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import { Home, User, Briefcase, FolderOpen, Mail } from "lucide-react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import Interpreter from "../atoms/Interpreter";
+import Interpreter from "../molecules/Interpreter";
 import { colorMap } from "@/lib/theme";
 import { useRefraction } from "@/hooks/useRefraction";
 

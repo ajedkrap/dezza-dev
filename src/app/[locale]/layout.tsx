@@ -4,8 +4,8 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import "../globals.css";
 import GlassNav from "@/components/organisms/GlassNav";
-import Gradient from "@/components/templates/Gradient";
-import PageTransition from "@/components/templates/PageTransition";
+import Gradient from "@/components/atoms/Gradient";
+import PageTransition from "@/components/organisms/PageTransition";
 import LiquidGlassFilter from "@/components/atoms/LiquidGlassFilter";
 
 const montserrat = Montserrat({

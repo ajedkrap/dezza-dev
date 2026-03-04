@@ -4,7 +4,7 @@ import { Link, usePathname } from "../../../i18n/navigation";
 import { cn } from "@/lib/utils";
 import { Home, User, Briefcase, FolderOpen, Mail } from "lucide-react";
 import Image from "next/image";
-import Interpreter from "../atoms/Interpreter";
+import Interpreter from "../molecules/Interpreter";
 import { useTranslations } from "next-intl";
 import { colorMap } from "@/lib/theme";
 import { useRefraction } from "@/hooks/useRefraction";
