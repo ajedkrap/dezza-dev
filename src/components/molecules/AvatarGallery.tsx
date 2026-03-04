@@ -3,43 +3,46 @@
 import { useSyncExternalStore, useState } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { getStorageUrl } from "@/lib/supabase";
 import { motion } from "motion/react";
 
-const styleAvatars = [
-  "/avatars/ghibli.png",
-  "/avatars/pixar.png",
-  "/avatars/simpsons.png",
-  "/avatars/one-piece.png",
-  "/avatars/dragonball.png",
-  "/avatars/lego-3d.png",
-  "/avatars/marvel-comic.png",
-  "/avatars/van-gogh.png",
-  "/avatars/rick-and-morty.png",
-  "/avatars/disney-2d.png",
-  "/avatars/naruto.png",
-  "/avatars/clay-motion.png",
-  "/avatars/anime.png",
-  "/avatars/anime-2.png",
-  "/avatars/asterix.png",
-  "/avatars/boku-no-hero.png",
-  "/avatars/capt-tsubasa.png",
-  "/avatars/caricature.png",
-  "/avatars/cupcake.png",
-  "/avatars/demon-slayer.png",
-  "/avatars/doraemon.png",
-  "/avatars/final-fantasy.png",
-  "/avatars/lego-2d.png",
-  "/avatars/manga.png",
-  "/avatars/one-piece-2.png",
-  "/avatars/picasso.png",
-  "/avatars/pixel.png",
-  "/avatars/roblox.png",
-  "/avatars/steven-universe.png",
-  "/avatars/tintin.png",
-  "/avatars/upin-ipin.png",
+const AVATAR_FILES = [
+  "ghibli",
+  "pixar",
+  "simpsons",
+  "one-piece",
+  "dragonball",
+  "lego-3d",
+  "marvel-comic",
+  "van-gogh",
+  "rick-and-morty",
+  "disney-2d",
+  "naruto",
+  "clay-motion",
+  "anime",
+  "anime-2",
+  "asterix",
+  "boku-no-hero",
+  "capt-tsubasa",
+  "caricature",
+  "cupcake",
+  "demon-slayer",
+  "doraemon",
+  "final-fantasy",
+  "lego-2d",
+  "manga",
+  "one-piece-2",
+  "picasso",
+  "pixel",
+  "roblox",
+  "steven-universe",
+  "tintin",
+  "upin-ipin",
 ];
-
-const ORIGINAL = "/avatars/original.png";
+const styleAvatars = AVATAR_FILES.map((file) =>
+  getStorageUrl(`avatars/${file}.png`),
+);
+const ORIGINAL = getStorageUrl("avatars/original.png");
 const GALLERY_SIZE = 7;
 
 function shufflePick(arr: string[], count: number): string[] {
@@ -53,7 +56,11 @@ const clientGallery = [ORIGINAL, ...shufflePick(styleAvatars, GALLERY_SIZE)];
 
 const subscribe = () => () => {};
 function useIsClient() {
-  return useSyncExternalStore(subscribe, () => true, () => false);
+  return useSyncExternalStore(
+    subscribe,
+    () => true,
+    () => false,
+  );
 }
 
 interface AvatarGalleryProps {
@@ -97,7 +104,7 @@ const AvatarGallery = ({
             sizes={imgSizes}
             className={cn(
               "object-cover transition-opacity duration-300",
-              i === activeIndex ? "opacity-100" : "opacity-0"
+              i === activeIndex ? "opacity-100" : "opacity-0",
             )}
             priority={i === 0}
             loading={i === 0 ? "eager" : "lazy"}

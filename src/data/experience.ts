@@ -1,3 +1,5 @@
+import {getStorageUrl} from "@/lib/supabase";
+
 export interface Experience {
   key: string;
   company: string;
@@ -31,7 +33,7 @@ export const experience: Experience[] = [
       "React Native", "Javascript", "Redux", "Firebase",
       "OAuth", "VSCode", "Android Studio", "Xcode", "Figma",
     ],
-    pdf: "/pdfs/works-at-pina.pdf",
+    pdf: getStorageUrl("pdfs/works-at-pina.pdf"),
   },
   {
     key: "tataskola",
@@ -40,7 +42,7 @@ export const experience: Experience[] = [
     framework: "React Native",
     numberOfTeam: 1,
     techStack: ["React Native", "Javascript", "Redux", "Figma"],
-    pdf: "/pdfs/works-at-tataskola.pdf",
+    pdf: getStorageUrl("pdfs/works-at-tataskola.pdf"),
   },
   {
     key: "tkd",
@@ -49,6 +51,6 @@ export const experience: Experience[] = [
     framework: "Android",
     numberOfTeam: 1,
     techStack: ["Android Native", "WebView", "Java", "PHP", "Figma"],
-    pdf: "/pdfs/works-at-tkd.pdf",
+    pdf: getStorageUrl("pdfs/works-at-tkd.pdf"),
   },
 ];

@@ -1,3 +1,5 @@
+import { getStorageUrl } from "@/lib/supabase";
+
 export interface StoreLinks {
   playStore?: string;
   appStore?: string;
@@ -48,7 +50,7 @@ export const projects: Project[] = [
       "Infisical",
       "MMKV",
     ],
-    logo: "/app-logos/k3i_operation.png",
+    logo: getStorageUrl("app-logos/k3i_operation.png"),
     logoBg: "#ffffff",
     logoSize: 72,
   },
@@ -73,7 +75,7 @@ export const projects: Project[] = [
       appStore:
         "https://apps.apple.com/id/app/k3i-korlantas-polri/id1593426320",
     },
-    logo: "/app-logos/k3i_public.png",
+    logo: getStorageUrl("app-logos/k3i_public.png"),
     logoBg: "#ffffff",
     logoSize: 60,
   },
@@ -100,7 +102,7 @@ export const projects: Project[] = [
         "https://play.google.com/store/apps/details?id=app.pina.id&hl=id",
       appStore: "https://apps.apple.com/id/app/pina/id1591615968",
     },
-    logo: "/app-logos/pina.png",
+    logo: getStorageUrl("app-logos/pina.png"),
     logoBg: "#fef5b9",
     logoSize: 28,
   },
@@ -109,7 +111,7 @@ export const projects: Project[] = [
     title: "Tataskola",
     company: "Tataskola (subsidiary of Pintek)",
     techStack: ["React Native", "JavaScript", "Axios", "Redux", "AsyncStorage"],
-    logo: "/app-logos/tataskola.png",
+    logo: getStorageUrl("app-logos/tataskola.png"),
     logoBg: "#d2e8f6",
   },
   {
@@ -117,7 +119,7 @@ export const projects: Project[] = [
     title: "Kupon Makan",
     company: "PT. Teknologi Kupon Digital",
     techStack: ["Java (Android)", "PHP", "Sentry", "WebView"],
-    logo: "/app-logos/kupon_makan.png",
+    logo: getStorageUrl("app-logos/kupon_makan.png"),
     logoBg: "#ffffff",
   },
   {
@@ -132,7 +134,7 @@ export const projects: Project[] = [
       "Sentry",
       "Redux",
     ],
-    logo: "/app-logos/koop.png",
+    logo: getStorageUrl("app-logos/koop.png"),
     logoBg: "#ffffff",
   },
 ];
@@ -141,7 +143,7 @@ export const apps: AppEntry[] = [
   {
     name: "Operation Support App",
     company: "Transnovasi",
-    logo: "/app-logos/k3i_operation.png",
+    logo: getStorageUrl("app-logos/k3i_operation.png"),
     logoBg: "#ffffff",
     logoSize: 72,
     framework: ["React Native", "TypeScript", "Expo"],
@@ -149,7 +151,7 @@ export const apps: AppEntry[] = [
   {
     name: "Public App",
     company: "Transnovasi",
-    logo: "/app-logos/k3i_public.png",
+    logo: getStorageUrl("app-logos/k3i_public.png"),
     logoBg: "#ffffff",
     logoSize: 60,
     framework: ["React Native", "JavaScript"],
@@ -161,7 +163,7 @@ export const apps: AppEntry[] = [
   {
     name: "PINA",
     company: "PINA",
-    logo: "/app-logos/pina.png",
+    logo: getStorageUrl("app-logos/pina.png"),
     logoBg: "#fef5b9",
     logoSize: 28,
     framework: ["React Native", "JavaScript"],
@@ -174,21 +176,21 @@ export const apps: AppEntry[] = [
   {
     name: "Tataskola",
     company: "Tataskola",
-    logo: "/app-logos/tataskola.png",
+    logo: getStorageUrl("app-logos/tataskola.png"),
     logoBg: "#d2e8f6",
     framework: ["React Native", "JavaScript"],
   },
   {
     name: "Kupon Makan",
     company: "PT. Teknologi Kupon Digital",
-    logo: "/app-logos/kupon_makan.png",
+    logo: getStorageUrl("app-logos/kupon_makan.png"),
     logoBg: "#ffffff",
     framework: ["Java (Android)", "PHP"],
   },
   {
     name: "Koop",
     company: "PT. Teknologi Kupon Digital",
-    logo: "/app-logos/koop.png",
+    logo: getStorageUrl("app-logos/koop.png"),
     logoBg: "#ffffff",
     framework: ["Java (Android)", "React Native"],
   },

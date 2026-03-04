@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
 import { FiChevronDown, FiDownload } from "react-icons/fi";
 import { useTypewriter } from "@/hooks/useTypewriter";
+import { getStorageUrl } from "@/lib/supabase";
 
 const nameVariants = [
   "Dezza Rizqi",
@@ -94,8 +95,9 @@ const HeroSection = () => {
         <span className="text-sm text-muted-foreground">{tHero("or")}</span>
 
         <a
-          href="/cv/CV-Dezza-Rizqi-2025.pdf"
-          download
+          href={getStorageUrl("cv/CV-Dezza-Rizqi-2026.pdf")}
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex items-center gap-2 rounded-xl bg-synthwave px-5 py-2.5 text-sm font-semibold text-white transition-all hover:shadow-[0_0_20px_rgba(124,58,237,0.3)]"
         >
           <FiDownload size={16} />
