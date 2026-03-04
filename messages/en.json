@@ -1,0 +1,212 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "about-mobile": "About",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, My name is ",
+    "scrollDown": "Scroll Down",
+    "downloadCV": "Download CV",
+    "or": "or"
+  },
+  "sections": {
+    "careerTimeline": "Career Timeline",
+    "careerSubtitle": "Where I've been building",
+    "education": "Education",
+    "educationSubtitle": "Academic background",
+    "certifications": "Certifications",
+    "certificationsSubtitle": "Continuous learning",
+    "career": "Career",
+    "techStack": "Tech Stack",
+    "skills": "Skills",
+    "skillsSubtitle": "Technical proficiency",
+    "getInTouch": "Get in Touch",
+    "getInTouchSubtitle": "Let's connect",
+    "getInTouchDescription": "Have a project in mind or just want to say hello? Feel free to reach out.",
+    "about": "About Me",
+    "aboutSubtitle": "Who I am",
+    "projects": "Projects",
+    "projectsSubtitle": "What I've built",
+    "languages": "Languages",
+    "languagesSubtitle": "Communication",
+    "viewAll": "View All",
+    "yearsExperience": "Years Experience",
+    "appsShipped": "Apps Shipped"
+  },
+  "form": {
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "email": "Email",
+    "emailPlaceholder": "you@example.com",
+    "message": "Message",
+    "messagePlaceholder": "Tell me about your project...",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "success": "Message sent! I'll get back to you soon.",
+    "error": "Something went wrong. Please try again.",
+    "required": "Please fill in all fields."
+  },
+  "experience": {
+    "intro": "4+ years building mobile applications across fintech, government, and education sectors. From sole developer to team collaborator.",
+    "viewCaseStudy": "Case Study"
+  },
+  "projectsPage": {
+    "intro": "A selection of mobile applications I've developed across different industries — from national police operations to fintech and education."
+  },
+  "contact": {
+    "intro": "Have a project in mind or just want to say hello? Feel free to reach out. I'm always open to discussing new opportunities and ideas."
+  },
+  "data": {
+    "personal": {
+      "title": "Fullstack Mobile Engineer",
+      "summary": "Passionate mobile developer with 4+ years experience and a keen eye for innovation. With a solid foundation in mobile app development and a proactive approach to staying ahead of emerging trends, I thrive on creating intuitive solutions that enhance productivity and connectivity.",
+      "location": "Bekasi, Indonesia",
+      "languages": {
+        "indonesian": { "name": "Bahasa Indonesia", "level": "Native" },
+        "english": { "name": "English", "level": "Fluent (TOEIC 790)" },
+        "japanese": { "name": "Japanese", "level": "JLPT N4" },
+        "korean": { "name": "Korean", "level": "TOPIK I Level 2" }
+      }
+    },
+    "experience": {
+      "transnovasi": {
+        "date": "Nov 2023 — Present",
+        "title": "Mobile Engineer",
+        "location": "Jakarta",
+        "description": "Sole Mobile Developer for two critical mobile apps for Korlantas Polri (Indonesian National Police Traffic Corps) within the K3I national project.",
+        "bullets": [
+          "Improved the Operation Support App: real-time officer tracking, device monitoring, operational activity reporting for command center situational awareness",
+          "Integrated Livekit for real-time video call capabilities",
+          "Enhanced stability by refactoring legacy code, implementing robust error handling, restructuring codebases into scalable atomic components",
+          "Contributed to the Public App: citizen access to Korlantas services (licensing, traffic info, news)",
+          "Operated in a highly agile environment, collaborating with frontend web and backend teams",
+          "Implemented Sentry for crash reporting and performance monitoring"
+        ]
+      },
+      "pina": {
+        "date": "May 2022 — Nov 2023",
+        "title": "Mobile Engineer",
+        "location": "Jakarta",
+        "description": "Comprehensive wealth management app offering personalized finance advisory, net worth tracking, financial goal management, and investment options.",
+        "bullets": [
+          "Refurbished authentication: implemented OAuth for Google and Apple login",
+          "Redesigned Home screen, account registration, and churning survey",
+          "Applied atomic component design principles to restructure UI folder",
+          "Developed the Advice feature: financial planning tool for consulting certified financial planners",
+          "Collaborated on core features: Invest, NetWorth, Save",
+          "Integrated AppsFlyer for attribution tracking and marketing analytics"
+        ]
+      },
+      "tataskola": {
+        "date": "Nov 2021 — Apr 2022",
+        "title": "Junior Mobile Developer",
+        "location": "Jakarta",
+        "description": "School administration platform for handling school-based payments via online transactions.",
+        "bullets": [
+          "Built pixel-perfect UIs for 5 core screens using mock data: Authentication, Home, Student List, Transaction List, Account",
+          "Achieved 95%+ design match across breakpoints; reduced rework by 70% via reusable components",
+          "Established mock API/data layer and API contracts for future backend integration",
+          "Structured modular component architecture; standardized design tokens and styles"
+        ]
+      },
+      "tkd": {
+        "date": "Oct 2020 — Oct 2021",
+        "title": "Android Developer",
+        "location": "Jakarta",
+        "description": "Developed two apps: Kupon Makan (food coupon donation system) and Koop (digital savings and loan cooperative).",
+        "bullets": [
+          "Kupon Makan: Redesigned UI with bottom navigation, coupon-style components, notification and donor statistics screens",
+          "Koop: Led full UI/UX refurbishment, executed framework migration from Android WebView to React Native",
+          "Integrated APIs and finalized screen builds; Koop moved to internal testing in ~2 months",
+          "Standardized front-end patterns for consistency and maintainability"
+        ]
+      }
+    },
+    "projects": {
+      "operationSupport": {
+        "description": "A mission-critical mobile app built for Korlantas Polri command center — enabling real-time GPS tracking of field officers, device monitoring, operational activity reporting, and on-premise voice/video communication via LiveKit.",
+        "details": [
+          "Migrated legacy JavaScript codebase to TypeScript (3 months)",
+          "Migrated to Turbo Monorepo architecture for code sharing and modularity",
+          "Implemented real-time GPS officer tracking and device monitoring",
+          "Integrated on-premise LiveKit for voice/video communication",
+          "Built Atomic Component architecture — custom components, no UI Kit"
+        ],
+        "platform": "Android (primary), iOS (testing)"
+      },
+      "publicApp": {
+        "description": "A citizen-facing mobile app providing access to Korlantas latest news and digital services — SINAR (driver's license), SIGNAL (vehicle registration), IRSMS (accident reporting), ETLE (traffic enforcement), Balik Desa (homecoming navigation), and regional police office directories.",
+        "details": [
+          "Integrated WebView for multiple Korlantas digital service platforms",
+          "Migrated repository into Turbo Monorepo structure",
+          "Implemented Atomic Component architecture consistent with Operation Support App"
+        ],
+        "platform": "Android & iOS"
+      },
+      "pina": {
+        "description": "A comprehensive wealth management app offering personalized financial advisory, net worth tracking, financial goal management, and investment in stocks and mutual funds.",
+        "details": [
+          "Implemented OAuth authentication (Google & Apple login)",
+          "Redesigned Home, registration, and churning survey screens",
+          "Built Advice feature for certified financial planner consultations",
+          "Integrated AppsFlyer for attribution tracking",
+          "Contributed to core Invest, NetWorth, and Save modules"
+        ],
+        "platform": "Android & iOS"
+      },
+      "tataskola": {
+        "description": "A school administration mobile app enabling guardians to manage school-based payments through online transactions. Built from scratch based on Figma designs with a CI/CD pipeline for Google Play deployment.",
+        "details": [
+          "Built 5 core screens from scratch: Auth, Home, Student List, Transaction List, Account",
+          "Achieved \u226595% design match across breakpoints (pixel-perfect UI)",
+          "Reduced rework by 70% through reusable components and design tokens",
+          "Defined API contracts and mock services for backend integration",
+          "Set up automated deployment pipeline to Google Play"
+        ],
+        "platform": "Android & iOS"
+      },
+      "kuponMakan": {
+        "description": "A social impact Android app designed as a digital enabler during COVID-19. Simplifies a coupon-based donation system where donors contribute food coupons to beneficiaries, redeemable at registered vendors.",
+        "details": [
+          "UI/UX redesign: introduced bottom navigation and coupon-style card components",
+          "Implemented donor-to-vendor messaging system APIs",
+          "Developed Notifications, Coupon Messages, Donor Testimonials & Statistics screens",
+          "Standardized front-end patterns for consistency and maintainability"
+        ],
+        "platform": "Android"
+      },
+      "koop": {
+        "description": "A digital financial services app modernizing savings and loan cooperative (koperasi) activities. Enables members to manage savings, apply for loans, and transfer money between members and external bank accounts.",
+        "details": [
+          "Led full UI/UX redesign to modernize the application",
+          "Executed complete framework migration from Java WebView to React Native",
+          "Integrated required APIs and finalized screen builds",
+          "Delivered test-ready build within approximately 2 months"
+        ],
+        "platform": "Android"
+      }
+    },
+    "education": {
+      "binus": {
+        "degree": "Bachelor Degree",
+        "field": "Computer Science"
+      }
+    },
+    "skills": {
+      "mobile": "Mobile",
+      "languages": "Languages",
+      "backend": "Backend & Database"
+    },
+    "techStack": {
+      "languages": "Languages",
+      "framework": "Framework",
+      "backend": "Backend & Database",
+      "codeEditor": "Code Editor",
+      "misc": "Misc"
+    }
+  }
+}

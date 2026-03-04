@@ -1,0 +1,212 @@
+{
+  "nav": {
+    "home": "Beranda",
+    "about": "Tentang",
+    "about-mobile": "Profil",
+    "experience": "Pengalaman",
+    "projects": "Portfolio",
+    "contact": "Hubungi"
+  },
+  "hero": {
+    "greeting": "Hai, Nama saya ",
+    "scrollDown": "Gulir ke Bawah",
+    "downloadCV": "Unduh CV",
+    "or": "atau"
+  },
+  "sections": {
+    "careerTimeline": "Linimasa Karir",
+    "careerSubtitle": "Tempat saya berkarya",
+    "education": "Pendidikan",
+    "educationSubtitle": "Latar Belakang Akademik",
+    "certifications": "Sertifikasi",
+    "certificationsSubtitle": "Pembelajaran Berkelanjutan",
+    "career": "Karir",
+    "techStack": "Tech Stack",
+    "skills": "Keahlian",
+    "skillsSubtitle": "Keterampilan Teknis",
+    "getInTouch": "Hubungi Saya",
+    "getInTouchSubtitle": "Mari berkoneksi",
+    "getInTouchDescription": "Adakah karya digital yang ingin anda buat? atau ingin berdiskusi santai? Silakan hubungi saya.",
+    "about": "Tentang Saya",
+    "aboutSubtitle": "Siapa saya",
+    "projects": "Portfolio",
+    "projectsSubtitle": "Apa yang telah saya bangun",
+    "languages": "Bahasa",
+    "languagesSubtitle": "Komunikasi",
+    "viewAll": "Lihat Semua",
+    "yearsExperience": "Tahun Pengalaman",
+    "appsShipped": "Aplikasi Dirilis"
+  },
+  "form": {
+    "name": "Nama",
+    "namePlaceholder": "Nama Anda",
+    "email": "Email",
+    "emailPlaceholder": "email@contoh.com",
+    "message": "Pesan",
+    "messagePlaceholder": "Beritahu saya tentang proyek Anda...",
+    "send": "Kirim Pesan",
+    "sending": "Mengirim...",
+    "success": "Pesan terkirim! Saya akan segera membalas.",
+    "error": "Terjadi kesalahan. Silakan coba lagi.",
+    "required": "Mohon isi semua kolom."
+  },
+  "experience": {
+    "intro": "4+ tahun membangun aplikasi mobile di berbagai sektor fintech, pemerintah, dan pendidikan. Dari pengembang sendiri hingga kolaborator tim.",
+    "viewCaseStudy": "Studi Kasus"
+  },
+  "projectsPage": {
+    "intro": "Pilihan aplikasi mobile yang telah saya kembangkan di berbagai sektor — dari sektor pemerintahan hingga fintech."
+  },
+  "contact": {
+    "intro": "Ada karya digital yang ingin kamu buat atau ingin berdiskusi? Silakan hubungi saya. Saya selalu terbuka untuk membicarakan peluang dan ide baru."
+  },
+  "data": {
+    "personal": {
+      "title": "Fullstack Mobile Engineer",
+      "summary": "Pengembang mobile yang bersemangat dengan pengalaman 4+ tahun dan memiliki ketertarikan tinggi terhadap inovasi. Dengan fondasi kuat dalam pengembangan aplikasi mobile dan pendekatan proaktif terhadap tren teknologi terbaru, saya senang menciptakan solusi intuitif yang meningkatkan produktivitas dan konektivitas.",
+      "location": "Bekasi, Indonesia",
+      "languages": {
+        "indonesian": { "name": "Bahasa Indonesia", "level": "Bahasa Ibu" },
+        "english": { "name": "Inggris", "level": "Fasih (TOEIC 790)" },
+        "japanese": { "name": "Jepang", "level": "JLPT N4" },
+        "korean": { "name": "Korea", "level": "TOPIK I Level 2" }
+      }
+    },
+    "experience": {
+      "transnovasi": {
+        "date": "Nov 2023 — Sekarang",
+        "title": "Mobile Engineer",
+        "location": "Jakarta",
+        "description": "Satu-satunya Pengembang Mobile untuk dua aplikasi penting Korlantas Polri dalam proyek nasional K3I.",
+        "bullets": [
+          "Memperbaiki Aplikasi Dukungan Operasi: pelacakan GPS petugas real-time, pemantauan perangkat, pelaporan aktivitas operasional untuk kesadaran situasional pusat komando",
+          "Mengintegrasikan Livekit untuk kemampuan video call real-time",
+          "Meningkatkan stabilitas dengan refactoring kode lama, menerapkan penanganan error yang kuat, merestrukturisasi codebase menjadi komponen atomik yang scalable",
+          "Berkontribusi pada Aplikasi Publik: akses masyarakat ke layanan Korlantas (SIM, info lalu lintas, berita)",
+          "Beroperasi dalam lingkungan agile, berkolaborasi dengan tim frontend web dan backend",
+          "Mengimplementasikan Sentry untuk pelaporan crash dan pemantauan kinerja"
+        ]
+      },
+      "pina": {
+        "date": "Mei 2022 — Nov 2023",
+        "title": "Mobile Engineer",
+        "location": "Jakarta",
+        "description": "Aplikasi manajemen kekayaan komprehensif yang menawarkan penasihat keuangan personal, pelacakan kekayaan bersih, manajemen tujuan keuangan, dan opsi investasi.",
+        "bullets": [
+          "Memperbarui autentikasi: mengimplementasikan OAuth untuk login Google dan Apple",
+          "Mendesain ulang layar Beranda, registrasi akun, dan survei churning",
+          "Menerapkan prinsip desain komponen atomik untuk merestrukturisasi folder UI",
+          "Mengembangkan fitur Advice: alat perencanaan keuangan untuk konsultasi dengan perencana keuangan bersertifikat",
+          "Berkolaborasi pada fitur inti: Invest, NetWorth, Save",
+          "Mengintegrasikan AppsFlyer untuk pelacakan atribusi dan analitik pemasaran"
+        ]
+      },
+      "tataskola": {
+        "date": "Nov 2021 — Apr 2022",
+        "title": "Junior Mobile Developer",
+        "location": "Jakarta",
+        "description": "Platform administrasi sekolah untuk menangani pembayaran berbasis sekolah melalui transaksi online.",
+        "bullets": [
+          "Membangun UI pixel-perfect untuk 5 layar utama menggunakan data mock: Autentikasi, Beranda, Daftar Siswa, Daftar Transaksi, Akun",
+          "Mencapai kesesuaian desain 95%+ di semua breakpoint; mengurangi pengerjaan ulang 70% melalui komponen reusable",
+          "Membuat layer mock API/data dan kontrak API untuk integrasi backend di masa depan",
+          "Menyusun arsitektur komponen modular; menstandarisasi design token dan style"
+        ]
+      },
+      "tkd": {
+        "date": "Okt 2020 — Okt 2021",
+        "title": "Android Developer",
+        "location": "Jakarta",
+        "description": "Mengembangkan dua aplikasi: Kupon Makan (sistem donasi kupon makanan) dan Koop (koperasi simpan pinjam digital).",
+        "bullets": [
+          "Kupon Makan: Mendesain ulang UI dengan bottom navigation, komponen gaya kupon, layar notifikasi dan statistik donatur",
+          "Koop: Memimpin pembaruan UI/UX secara menyeluruh, melakukan migrasi framework dari Android WebView ke React Native",
+          "Mengintegrasikan API dan menyelesaikan pembuatan layar; Koop masuk ke pengujian internal dalam ~2 bulan",
+          "Menstandarisasi pola front-end untuk konsistensi dan kemudahan pemeliharaan"
+        ]
+      }
+    },
+    "projects": {
+      "operationSupport": {
+        "description": "Aplikasi mobile mission-critical yang dibangun untuk pusat komando Korlantas Polri — memungkinkan pelacakan GPS real-time petugas lapangan, pemantauan perangkat, pelaporan aktivitas operasional, dan komunikasi suara/video on-premise melalui LiveKit.",
+        "details": [
+          "Memigrasikan codebase JavaScript lama ke TypeScript (3 bulan)",
+          "Memigrasikan ke arsitektur Turbo Monorepo untuk berbagi kode dan modularitas",
+          "Mengimplementasikan pelacakan GPS petugas dan pemantauan perangkat real-time",
+          "Mengintegrasikan LiveKit on-premise untuk komunikasi suara/video",
+          "Membangun arsitektur Komponen Atomik — komponen kustom, tanpa UI Kit"
+        ],
+        "platform": "Android (utama), iOS (testing)"
+      },
+      "publicApp": {
+        "description": "Aplikasi mobile untuk masyarakat yang menyediakan akses ke berita terbaru Korlantas dan layanan digital — SINAR (SIM), SIGNAL (registrasi kendaraan), IRSMS (pelaporan kecelakaan), ETLE (penegakan lalu lintas), Balik Desa (navigasi mudik), dan direktori kantor polisi daerah.",
+        "details": [
+          "Mengintegrasikan WebView untuk berbagai platform layanan digital Korlantas",
+          "Memigrasikan repository ke dalam struktur Turbo Monorepo",
+          "Mengimplementasikan arsitektur Komponen Atomik yang konsisten dengan Aplikasi Dukungan Operasi"
+        ],
+        "platform": "Android & iOS"
+      },
+      "pina": {
+        "description": "Aplikasi manajemen kekayaan komprehensif yang menawarkan penasihat keuangan personal, pelacakan kekayaan bersih, manajemen tujuan keuangan, dan investasi saham serta reksa dana.",
+        "details": [
+          "Mengimplementasikan autentikasi OAuth (login Google & Apple)",
+          "Mendesain ulang layar Beranda, registrasi, dan survei churning",
+          "Membangun fitur Advice untuk konsultasi perencana keuangan bersertifikat",
+          "Mengintegrasikan AppsFlyer untuk pelacakan atribusi",
+          "Berkontribusi pada modul inti Invest, NetWorth, dan Save"
+        ],
+        "platform": "Android & iOS"
+      },
+      "tataskola": {
+        "description": "Aplikasi mobile administrasi sekolah yang memungkinkan wali murid mengelola pembayaran berbasis sekolah melalui transaksi online. Dibangun dari nol berdasarkan desain Figma dengan pipeline CI/CD untuk deployment Google Play.",
+        "details": [
+          "Membangun 5 layar utama dari nol: Auth, Beranda, Daftar Siswa, Daftar Transaksi, Akun",
+          "Mencapai kesesuaian desain \u226595% di semua breakpoint (pixel-perfect UI)",
+          "Mengurangi pengerjaan ulang 70% melalui komponen reusable dan design token",
+          "Mendefinisikan kontrak API dan layanan mock untuk integrasi backend",
+          "Menyiapkan pipeline deployment otomatis ke Google Play"
+        ],
+        "platform": "Android & iOS"
+      },
+      "kuponMakan": {
+        "description": "Aplikasi Android berdampak sosial yang dirancang sebagai enabler digital selama COVID-19. Menyederhanakan sistem donasi berbasis kupon di mana donatur menyumbangkan kupon makanan kepada penerima manfaat, yang dapat ditukarkan di vendor terdaftar.",
+        "details": [
+          "Redesain UI/UX: memperkenalkan bottom navigation dan komponen kartu bergaya kupon",
+          "Mengimplementasikan API sistem pesan donatur-ke-vendor",
+          "Mengembangkan layar Notifikasi, Pesan Kupon, Testimonial Donatur & Statistik",
+          "Menstandarisasi pola front-end untuk konsistensi dan kemudahan pemeliharaan"
+        ],
+        "platform": "Android"
+      },
+      "koop": {
+        "description": "Aplikasi layanan keuangan digital yang memodernisasi aktivitas koperasi simpan pinjam. Memungkinkan anggota mengelola tabungan, mengajukan pinjaman, dan mentransfer uang antar anggota dan rekening bank eksternal.",
+        "details": [
+          "Memimpin redesain UI/UX secara menyeluruh untuk memodernisasi aplikasi",
+          "Melakukan migrasi framework lengkap dari Java WebView ke React Native",
+          "Mengintegrasikan API yang diperlukan dan menyelesaikan pembuatan layar",
+          "Menyelesaikan build siap uji dalam waktu sekitar 2 bulan"
+        ],
+        "platform": "Android"
+      }
+    },
+    "education": {
+      "binus": {
+        "degree": "Sarjana",
+        "field": "Ilmu Komputer"
+      }
+    },
+    "skills": {
+      "mobile": "Mobile",
+      "languages": "Bahasa Pemrograman",
+      "backend": "Backend & Database"
+    },
+    "techStack": {
+      "languages": "Bahasa Pemrograman",
+      "framework": "Framework",
+      "backend": "Backend & Database",
+      "codeEditor": "Code Editor",
+      "misc": "Lainnya"
+    }
+  }
+}
