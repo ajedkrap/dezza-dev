@@ -22,7 +22,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://dezzarizqi.dev"
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://dezza.dev",
   ),
   title: {
     default: "Dezza Rizqi — Fullstack Mobile",
@@ -61,6 +61,12 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className="dark">
+      <head>
+        <link
+          rel="preconnect"
+          href={process.env.NEXT_PUBLIC_SUPABASE_URL}
+        />
+      </head>
       <body
         className={`${montserrat.variable} ${jetbrainsMono.variable} font-sans antialiased`}
       >
@@ -74,7 +80,10 @@ export default async function LocaleLayout({
           <LiquidGlassFilter />
           <Gradient />
           <GlassNav />
-          <main id="main-content" className="relative z-10 min-h-screen pt-0 md:pl-16 lg:pl-0">
+          <main
+            id="main-content"
+            className="relative z-10 min-h-screen pt-0 md:pl-16 lg:pl-0"
+          >
             <PageTransition>{children}</PageTransition>
           </main>
         </NextIntlClientProvider>

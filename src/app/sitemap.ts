@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl =
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://dezzarizqi.dev";
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://dezza.dev";
 
   const locales = ["en", "id", "ja"];
   const pages = ["", "/about", "/experience", "/projects", "/contact"];
