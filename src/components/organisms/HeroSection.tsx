@@ -95,7 +95,7 @@ const HeroSection = () => {
         <span className="text-sm text-muted-foreground">{tHero("or")}</span>
 
         <a
-          href={getStorageUrl("cv/CV-Dezza-Rizqi-2026.pdf")}
+          href={getStorageUrl("cv/cv-dezza-rizqi.pdf")}
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 rounded-xl bg-synthwave px-5 py-2.5 text-sm font-semibold text-white transition-all hover:shadow-[0_0_20px_rgba(124,58,237,0.3)]"
