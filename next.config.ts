@@ -22,9 +22,9 @@ const securityHeaders = [
       "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "font-src 'self' https://fonts.gstatic.com",
-      "img-src 'self' data: blob: https://*.supabase.co",
-      "connect-src 'self' https://*.supabase.co",
-      "frame-src 'self' https://*.supabase.co",
+      "img-src 'self' data: blob: https://wxtnwrnsjqzauhdlusqu.supabase.co",
+      "connect-src 'self' https://wxtnwrnsjqzauhdlusqu.supabase.co",
+      "frame-src 'self' https://wxtnwrnsjqzauhdlusqu.supabase.co",
     ].join("; "),
   },
 ];
