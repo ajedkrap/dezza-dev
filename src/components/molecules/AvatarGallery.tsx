@@ -7,42 +7,93 @@ import { getStorageUrl } from "@/lib/supabase";
 import { motion } from "motion/react";
 
 const AVATAR_FILES = [
-  "ghibli",
-  "pixar",
-  "simpsons",
-  "one-piece",
-  "dragonball",
-  "lego-3d",
-  "marvel-comic",
-  "van-gogh",
-  "rick-and-morty",
-  "disney-2d",
-  "naruto",
-  "clay-motion",
-  "anime",
-  "anime-2",
+  "2bit-pixel",
+  "8bit-pixel",
+  "arcane",
+  "art-nouveau",
+  "art-paper",
+  "ascii",
   "asterix",
+  "attack-on-titan",
+  "banksy-cardboard",
+  "banksy-wall",
+  "beavis-and-buthead",
+  "bleach",
+  "blueprint",
   "boku-no-hero",
+  "borderlands",
+  "brushwork",
   "capt-tsubasa",
-  "caricature",
+  "carricature",
+  "caucasian",
+  "chalkboard",
+  "claymation",
+  "corporate-memphis",
+  "cowboy-bebop",
+  "crayon-shinchan",
   "cupcake",
+  "cuphead",
+  "datamosh",
   "demon-slayer",
+  "detective-conan",
+  "disney-2d",
+  "disney-3d",
   "doraemon",
+  "dragonball",
+  "dragonball-2",
+  "edvard-munch",
+  "family-guy",
   "final-fantasy",
-  "lego-2d",
+  "frieren",
+  "ghibli",
+  "gta-v-loading",
+  "jojo",
+  "jujutsu-kaizen",
+  "lego",
+  "low-poly",
+  "makoto-shinkai",
   "manga",
+  "marvel",
+  "minecraft",
+  "mona-lisa",
+  "naruto",
+  "naruto-2",
+  "noir",
+  "old-photo",
+  "one-piece-1",
   "one-piece-2",
+  "one-punch-man",
+  "osamu-tezuka",
   "picasso",
-  "pixel",
+  "pixar",
+  "pixar-2",
+  "rick-and-morty",
   "roblox",
+  "sin-city",
+  "sketch",
+  "spider-verse",
+  "stained-glass",
   "steven-universe",
+  "steven-universe-2",
+  "sumi-e",
+  "surrealism",
+  "surrealism-2",
+  "synthwave",
+  "takehiko-inoue",
+  "the-simpsons",
   "tintin",
+  "tron",
+  "ukiyo-e",
   "upin-ipin",
+  "upin-ipin-3",
+  "van-gogh",
+  "victorian",
+  "voxel",
 ];
 const styleAvatars = AVATAR_FILES.map((file) =>
-  getStorageUrl(`avatars/${file}.png`),
+  getStorageUrl(`new-avatars/${file}.webp`),
 );
-const ORIGINAL = getStorageUrl("avatars/original.png");
+const ORIGINAL = getStorageUrl("new-avatars/original.webp");
 const GALLERY_SIZE = 7;
 
 function shufflePick(arr: string[], count: number): string[] {
@@ -79,7 +130,7 @@ const AvatarGallery = ({
   const gallery = isClient ? clientGallery : serverGallery;
 
   const sizeClass = size === "lg" ? "h-36 w-36 md:h-44 md:w-44" : "h-28 w-28";
-  const imgSizes = size === "lg" ? "176px" : "112px";
+  const imgSizes = size === "lg" ? "216px" : "144px";
 
   const content = (
     <div
@@ -90,7 +141,7 @@ const AvatarGallery = ({
       <motion.div
         className="absolute inset-0 rounded-full border border-accent-purple/20"
         animate={{ scale: [1, 1.15, 1], opacity: [0.5, 0, 0.5] }}
-        transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+        transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
       />
 
       {/* Image stack */}
