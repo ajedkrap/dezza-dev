@@ -27,7 +27,7 @@ const Interpreter = ({ className }: { className?: string }) => {
   };
 
   return (
-    <div className={cn("flex items-center gap-1", className)}>
+    <div translate="no" className={cn("flex items-center gap-1", className)}>
       {routing.locales.map((loc) => (
         <button
           key={loc}

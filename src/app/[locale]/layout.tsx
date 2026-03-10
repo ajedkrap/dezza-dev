@@ -60,8 +60,26 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className="dark">
+    <html lang={locale} className="dark" suppressHydrationWarning>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+(function(){
+  var o=Node.prototype.removeChild;
+  Node.prototype.removeChild=function(c){
+    if(c.parentNode!==this){return c}
+    return o.apply(this,arguments)
+  };
+  var i=Node.prototype.insertBefore;
+  Node.prototype.insertBefore=function(n,r){
+    if(r&&r.parentNode!==this){return n}
+    return i.apply(this,arguments)
+  };
+})();
+`,
+          }}
+        />
         <link
           rel="preconnect"
           href={process.env.NEXT_PUBLIC_SUPABASE_URL}
@@ -69,6 +87,7 @@ export default async function LocaleLayout({
       </head>
       <body
         className={`${montserrat.variable} ${jetbrainsMono.variable} font-sans antialiased`}
+        suppressHydrationWarning
       >
         <NextIntlClientProvider messages={messages}>
           <a

@@ -22,10 +22,10 @@ const securityHeaders = [
     value: [
       "default-src 'self'",
       "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
-      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://www.gstatic.com",
       "font-src 'self' https://fonts.gstatic.com",
-      "img-src 'self' data: blob: https://*.supabase.co",
-      "connect-src 'self' https://*.supabase.co",
+      "img-src 'self' data: blob: https://*.supabase.co https://www.google.com https://translate.google.com",
+      "connect-src 'self' https://*.supabase.co https://translate.googleapis.com",
       "frame-src 'self' https://*.supabase.co",
     ].join("; "),
   },
