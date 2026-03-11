@@ -118,7 +118,6 @@ export const techStack: StackGroup[] = [
       { name: "Heroku", icon: "SiHeroku" },
       { name: "Digital Ocean", icon: "SiDigitalocean" },
       { name: "Figma", icon: "SiFigma" },
-      { name: "Adobe XD", icon: "SiAdobexd" },
       { name: "Sentry", icon: "SiSentry" },
       { name: "Redux", icon: "SiRedux" },
       { name: "Docker", icon: "SiDocker" },

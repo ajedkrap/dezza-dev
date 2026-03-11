@@ -55,7 +55,6 @@ import {
   SiTrello,
   SiClickup,
   SiLinear,
-  SiAdobexd,
   SiNotion,
   SiTensorflow,
 } from "react-icons/si";
@@ -114,7 +113,6 @@ const iconMap: Record<string, IconType> = {
   SiTrello,
   SiClickup,
   SiLinear,
-  SiAdobexd,
   SiNotion,
   VscVscode,
   SiTensorflow,

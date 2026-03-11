@@ -4,6 +4,7 @@ import { Link, usePathname } from "../../../i18n/navigation";
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { Home, User, Briefcase, FolderOpen, Mail } from "lucide-react";
+import Interpreter from "../molecules/Interpreter";
 import { colorMap } from "@/lib/theme";
 import { useRefraction } from "@/hooks/useRefraction";
 
@@ -37,8 +38,12 @@ const BottomTabNav = () => {
   ];
 
   return (
-    <nav ref={refractionRef} className="glass-nav glass-refract fixed bottom-4 left-4 right-4 z-50 flex items-end justify-around px-2 py-2 rounded-2xl">
-      {navItems.map((item) => {
+    <>
+      <div className="fixed bottom-[5.5rem] right-4 z-50">
+        <Interpreter className="glass-nav rounded-full px-2 py-1.5" />
+      </div>
+      <nav ref={refractionRef} className="glass-nav glass-refract fixed bottom-4 left-4 right-4 z-50 flex items-end justify-around px-2 py-2 rounded-2xl">
+        {navItems.map((item) => {
         const isActive = pathname === item.href;
         const isCenter = "isCenter" in item && item.isCenter;
 
@@ -83,7 +88,8 @@ const BottomTabNav = () => {
           </Link>
         );
       })}
-    </nav>
+      </nav>
+    </>
   );
 };
 
