@@ -47,6 +47,10 @@
     "send": "Send Message",
     "sending": "Sending...",
     "success": "Message sent! I'll get back to you soon.",
+    "successHeading": "Message received",
+    "successSubtitle": "I'll get back to you within 24 hours. In the meantime, feel free to connect.",
+    "sendAnother": "Send another",
+    "orEmail": "Or email me directly",
     "error": "Something went wrong. Please try again.",
     "required": "Please fill in all fields."
   },

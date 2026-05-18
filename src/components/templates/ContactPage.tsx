@@ -24,7 +24,7 @@ const ContactPage = () => {
     <div className="mx-auto max-w-5xl px-6 py-20 pb-32 md:px-12 lg:px-24">
       <div className="flex flex-col gap-10 lg:flex-row lg:gap-16">
         {/* Left — heading + info */}
-        <motion.div className="flex-1" {...fadeUp}>
+        <motion.div className="flex-1 max-w-lg mx-auto w-full lg:mx-0" {...fadeUp}>
           <SectionHeading
             title={t("getInTouch")}
             subtitle={t("getInTouchSubtitle")}
@@ -36,12 +36,12 @@ const ContactPage = () => {
           <div className="mt-8 flex flex-col gap-4">
             <a
               href={`mailto:${personal.email}`}
-              className="flex items-center gap-3 text-sm text-muted-foreground transition-colors hover:text-foreground"
+              className="flex items-center gap-3 self-start text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
               <FiMail size={18} className="text-accent-cyan" />
               {personal.email}
             </a>
-            <span className="flex items-center gap-3 text-sm text-muted-foreground">
+            <span className="flex items-center gap-3 self-start text-sm text-muted-foreground">
               <FiMapPin size={18} className="text-accent-cyan" />
               {tPersonal("location")}
             </span>
@@ -49,7 +49,7 @@ const ContactPage = () => {
               href={personal.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 text-sm text-muted-foreground transition-colors hover:text-foreground"
+              className="flex items-center gap-3 self-start text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
               <FiGithub size={18} className="text-accent-cyan" />
               GitHub
@@ -58,7 +58,7 @@ const ContactPage = () => {
               href={personal.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 text-sm text-muted-foreground transition-colors hover:text-foreground"
+              className="flex items-center gap-3 self-start text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
               <FiLinkedin size={18} className="text-accent-cyan" />
               LinkedIn
@@ -67,7 +67,7 @@ const ContactPage = () => {
         </motion.div>
 
         {/* Right — form */}
-        <motion.div className="flex-1 max-w-lg" {...fadeUp}>
+        <motion.div className="flex-1 max-w-lg mx-auto w-full lg:mx-0" {...fadeUp}>
           <GlassCard refract className="p-8">
             <ContactForm />
           </GlassCard>

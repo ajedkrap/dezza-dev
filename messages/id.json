@@ -47,6 +47,10 @@
     "send": "Kirim Pesan",
     "sending": "Mengirim...",
     "success": "Pesan terkirim! Saya akan segera membalas.",
+    "successHeading": "Pesan diterima",
+    "successSubtitle": "Saya akan membalas dalam 24 jam. Sambil menunggu, silakan terhubung lewat tautan di bawah.",
+    "sendAnother": "Kirim lagi",
+    "orEmail": "Atau kirim email langsung",
     "error": "Terjadi kesalahan. Silakan coba lagi.",
     "required": "Mohon isi semua kolom."
   },

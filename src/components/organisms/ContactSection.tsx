@@ -16,10 +16,13 @@ const ContactSection = () => {
   const t = useTranslations("sections");
 
   return (
-    <section className="flex min-h-screen flex-col justify-center px-6 py-20 pb-32 md:px-12 lg:px-24">
+    <section className="flex min-h-screen flex-col justify-center px-6 py-16 pb-32 md:px-12 lg:px-24">
       <div className="flex flex-col gap-10 lg:flex-row lg:gap-16">
         {/* Left — heading + social links */}
-        <motion.div className="flex-1" {...fadeUp}>
+        <motion.div
+          className="max-w-lg flex-1 mx-auto w-full lg:mx-0"
+          {...fadeUp}
+        >
           <h2 className="text-2xl font-bold text-foreground md:text-3xl">
             {t("getInTouch")}
           </h2>
@@ -31,7 +34,7 @@ const ContactSection = () => {
               href={personal.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+              className="flex items-center gap-2 text-sm self-start text-muted-foreground transition-colors hover:text-foreground"
             >
               <FiGithub size={16} /> GitHub
             </a>
@@ -39,13 +42,13 @@ const ContactSection = () => {
               href={personal.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+              className="flex items-center gap-2 text-sm self-start text-muted-foreground transition-colors hover:text-foreground"
             >
               <FiLinkedin size={16} /> LinkedIn
             </a>
             <a
               href={`mailto:${personal.email}`}
-              className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+              className="flex items-center gap-2 text-sm self-start text-muted-foreground transition-colors hover:text-foreground"
             >
               <FiMail size={16} /> {personal.email}
             </a>
@@ -53,7 +56,10 @@ const ContactSection = () => {
         </motion.div>
 
         {/* Right — form */}
-        <motion.div className="max-w-lg flex-1" {...fadeUp}>
+        <motion.div
+          className="max-w-lg flex-1 mx-auto w-full lg:mx-0"
+          {...fadeUp}
+        >
           <GlassCard hoverGlow className="p-6">
             <ContactForm />
           </GlassCard>
