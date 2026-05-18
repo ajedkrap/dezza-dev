@@ -22,6 +22,11 @@ export interface Certificate {
 
 export const certificates: Certificate[] = [
   {
+    name: "Meta React Native",
+    issuer: "Meta",
+    year: "2025",
+  },
+  {
     name: "iOS & Swift - The Complete iOS App Development Bootcamp",
     issuer: "Udemy",
     year: "2025",
