@@ -4,8 +4,8 @@ import { motion } from "motion/react";
 import SectionHeading from "@/components/molecules/SectionHeading";
 import TimelineItem from "@/components/molecules/TimelineItem";
 import GlassBadge from "@/components/atoms/GlassBadge";
-import { experience } from "@/data/experience";
 import { useTranslations } from "next-intl";
+import type { Experience } from "@/types/content";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -14,10 +14,9 @@ const fadeUp = {
   transition: { duration: 0.6 },
 };
 
-const ExperiencePage = () => {
+const ExperiencePage = ({ experiences }: { experiences: Experience[] }) => {
   const t = useTranslations("sections");
   const tExp = useTranslations("experience");
-  const tData = useTranslations("data.experience");
 
   return (
     <div className="mx-auto max-w-5xl px-6 py-20 pb-32 md:px-12 lg:px-24">
@@ -40,14 +39,14 @@ const ExperiencePage = () => {
 
       {/* Timeline */}
       <div className="mt-12">
-        {experience.map((exp) => (
+        {experiences.map((exp) => (
           <TimelineItem
             key={exp.key}
-            date={tData(`${exp.key}.date`)}
-            title={tData(`${exp.key}.title`)}
+            date={exp.period}
+            title={exp.title}
             company={exp.company}
-            description={tData(`${exp.key}.description`)}
-            bullets={tData.raw(`${exp.key}.bullets`)}
+            description={exp.description}
+            bullets={exp.bullets}
             techStack={exp.techStack}
             pdf={exp.pdf}
             pdfLabel={tExp("viewCaseStudy")}

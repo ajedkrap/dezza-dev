@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
-import { experience } from "@/data/experience";
 import { useTranslations } from "next-intl";
+import type { Experience } from "@/types/content";
 import { Link } from "../../../i18n/navigation";
 import { FiArrowRight } from "react-icons/fi";
 import GlassCard from "../atoms/GlassCard";
@@ -12,9 +12,8 @@ const fadeUp = {
   transition: { duration: 0.6 },
 };
 
-const CareerSection = () => {
+const CareerSection = ({ experiences }: { experiences: Experience[] }) => {
   const t = useTranslations("sections");
-  const tData = useTranslations("data.experience");
 
   return (
     <section className="px-6 py-20 md:px-12 lg:px-24">
@@ -27,7 +26,7 @@ const CareerSection = () => {
         </motion.h2>
 
         <div className="relative ml-4 border-l border-white/10 pl-8">
-        {experience.map((exp) => (
+        {experiences.map((exp) => (
           <motion.div
             key={exp.key}
             className="relative mb-10 last:mb-0"
@@ -37,13 +36,13 @@ const CareerSection = () => {
             <div className="absolute -left-[calc(2rem+5px)] top-1.5 h-2.5 w-2.5 rounded-full border border-accent-purple bg-background" />
 
             <GlassCard hoverGlow className="p-5">
-              <p className="font-mono text-xs text-accent-cyan">{tData(`${exp.key}.date`)}</p>
+              <p className="font-mono text-xs text-accent-cyan">{exp.period}</p>
               <h3 className="mt-1 text-lg font-semibold text-foreground">
-                {tData(`${exp.key}.title`)}
+                {exp.title}
               </h3>
               <p className="text-sm text-accent-magenta">{exp.company}</p>
               <p className="mt-1 text-sm text-muted-foreground">
-                {tData(`${exp.key}.description`)}
+                {exp.description}
               </p>
             </GlassCard>
           </motion.div>

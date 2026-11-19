@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ExperiencePage from "@/components/templates/ExperiencePage";
+import { getExperiences } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Experience",
@@ -12,6 +13,12 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Experience() {
-  return <ExperiencePage />;
+export default async function Experience({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const experiences = await getExperiences(locale);
+  return <ExperiencePage experiences={experiences} />;
 }

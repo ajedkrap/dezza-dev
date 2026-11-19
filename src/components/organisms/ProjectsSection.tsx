@@ -2,8 +2,8 @@ import { motion } from "motion/react";
 import GlassCard from "../atoms/GlassCard";
 import Image from "next/image";
 import GlassBadge from "../atoms/GlassBadge";
-import { apps } from "@/data/project";
 import { useTranslations } from "next-intl";
+import type { Project } from "@/types/content";
 import { Link } from "../../../i18n/navigation";
 import { FaGooglePlay, FaAppStoreIos } from "react-icons/fa";
 import { FiArrowRight } from "react-icons/fi";
@@ -15,7 +15,7 @@ const fadeUp = {
   transition: { duration: 0.6 },
 };
 
-const ProjectsSection = () => {
+const ProjectsSection = ({ projects }: { projects: Project[] }) => {
   const t = useTranslations("sections");
 
   return (
@@ -28,32 +28,34 @@ const ProjectsSection = () => {
       </motion.h2>
 
       <div className="grid gap-4 grid-cols-2 md:grid-cols-3">
-        {apps.map((app) => (
-          <motion.div key={app.name} {...fadeUp}>
+        {projects.map((app) => (
+          <motion.div key={app.key} {...fadeUp}>
             <GlassCard
               hoverGlow
               className="group flex flex-col items-center gap-3 p-5 text-center"
             >
-              <div
-                className="flex h-16 w-16 items-center justify-center overflow-hidden rounded-xl transition-[filter] duration-300 saturate-[.25] brightness-75 group-hover:saturate-100 group-hover:brightness-100"
-                style={{ backgroundColor: app.logoBg }}
-              >
-                <Image
-                  src={app.logo}
-                  alt={app.name}
-                  width={app.logoSize ?? 40}
-                  height={app.logoSize ?? 40}
-                  className="object-contain"
-                />
-              </div>
+              {app.logo && (
+                <div
+                  className="flex h-16 w-16 items-center justify-center overflow-hidden rounded-xl transition-[filter] duration-300 saturate-[.25] brightness-75 group-hover:saturate-100 group-hover:brightness-100"
+                  style={{ backgroundColor: app.logoBg }}
+                >
+                  <Image
+                    src={app.logo}
+                    alt={app.shortTitle}
+                    width={app.logoSize ?? 40}
+                    height={app.logoSize ?? 40}
+                    className="object-contain"
+                  />
+                </div>
+              )}
               <div>
                 <h3 className="text-sm font-semibold text-foreground">
-                  {app.name}
+                  {app.shortTitle}
                 </h3>
-                <p className="text-xs text-muted-foreground">{app.company}</p>
+                <p className="text-xs text-muted-foreground">{app.shortCompany}</p>
               </div>
               <div className="flex flex-wrap justify-center gap-1.5">
-                {app.framework.map((tech) => (
+                {app.shortStack.map((tech) => (
                   <GlassBadge
                     key={tech}
                     color="purple"
@@ -70,7 +72,7 @@ const ProjectsSection = () => {
                       href={app.links.playStore}
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label={`${app.name} on Google Play`}
+                      aria-label={`${app.shortTitle} on Google Play`}
                       className="text-muted-foreground transition-colors hover:text-accent-cyan"
                     >
                       <FaGooglePlay size={14} />
@@ -81,7 +83,7 @@ const ProjectsSection = () => {
                       href={app.links.appStore}
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label={`${app.name} on App Store`}
+                      aria-label={`${app.shortTitle} on App Store`}
                       className="text-muted-foreground transition-colors hover:text-accent-cyan"
                     >
                       <FaAppStoreIos size={16} />
