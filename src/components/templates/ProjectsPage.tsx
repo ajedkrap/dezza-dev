@@ -4,8 +4,8 @@ import { motion } from "motion/react";
 import GlassCard from "@/components/atoms/GlassCard";
 import GlassBadge from "@/components/atoms/GlassBadge";
 import SectionHeading from "@/components/molecules/SectionHeading";
-import { projects } from "@/data/project";
 import { useTranslations } from "next-intl";
+import type { Project } from "@/types/content";
 import { FaGooglePlay, FaAppStoreIos } from "react-icons/fa";
 import Image from "next/image";
 
@@ -16,10 +16,9 @@ const fadeUp = {
   transition: { duration: 0.6 },
 };
 
-const ProjectsPage = () => {
+const ProjectsPage = ({ projects }: { projects: Project[] }) => {
   const t = useTranslations("sections");
   const tProj = useTranslations("projectsPage");
-  const tData = useTranslations("data.projects");
 
   return (
     <div className="mx-auto max-w-5xl px-6 py-20 pb-32 md:px-12 lg:px-24">
@@ -59,11 +58,11 @@ const ProjectsPage = () => {
                 </div>
               </div>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                {tData(`${project.key}.description`)}
+                {project.description}
               </p>
 
               <ul className="mt-4 space-y-1">
-                {(tData.raw(`${project.key}.details`) as string[]).map((detail, i) => (
+                {project.details.map((detail, i) => (
                   <li
                     key={i}
                     className="text-sm text-muted-foreground before:mr-2 before:content-['▹'] before:text-accent-purple"
@@ -74,9 +73,11 @@ const ProjectsPage = () => {
               </ul>
 
               <div className="mt-auto pt-4">
-                <p className="mb-2 text-xs text-muted-foreground/80">
-                  {tData(`${project.key}.platform`)}
-                </p>
+                {project.platform && (
+                  <p className="mb-2 text-xs text-muted-foreground/80">
+                    {project.platform}
+                  </p>
+                )}
                 <div className="flex flex-wrap gap-2">
                   {project.techStack.map((tech) => (
                     <GlassBadge key={tech} color="purple">

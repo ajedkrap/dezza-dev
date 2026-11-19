@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import HomePage from "@/components/templates/HomePage";
+import { getExperiences, getProjects } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Dezza Rizqi — Fullstack Mobile",
@@ -12,6 +13,20 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Home() {
-  return <HomePage />;
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const [experiences, projects] = await Promise.all([
+    getExperiences(locale),
+    getProjects(locale),
+  ]);
+  return (
+    <HomePage
+      experiences={experiences}
+      projects={projects.filter((p) => p.featured)}
+    />
+  );
 }
