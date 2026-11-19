@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ProjectsPage from "@/components/templates/ProjectsPage";
+import { getProjects } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -12,8 +13,14 @@ export const metadata: Metadata = {
   },
 };
 
-const Projects = () => {
-  return <ProjectsPage />;
+const Projects = async ({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) => {
+  const { locale } = await params;
+  const projects = await getProjects(locale);
+  return <ProjectsPage projects={projects} />;
 };
 
 export default Projects;
