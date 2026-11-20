@@ -6,9 +6,8 @@ import GlassBadge from "@/components/atoms/GlassBadge";
 import SectionHeading from "@/components/molecules/SectionHeading";
 import SkillBar from "@/components/molecules/SkillBar";
 import { personal } from "@/data/personal";
-import { education, certificates } from "@/data/education";
-import { skills } from "@/data/skills";
 import { useTranslations } from "next-intl";
+import type { AboutContent } from "@/types/content";
 import StatCard from "../molecules/StatCard";
 import AvatarGallery from "../molecules/AvatarGallery";
 
@@ -19,11 +18,9 @@ const fadeUp = {
   transition: { duration: 0.6 },
 };
 
-const AboutPage = () => {
+const AboutPage = ({ skills, education, certificates }: AboutContent) => {
   const t = useTranslations("sections");
   const tPersonal = useTranslations("data.personal");
-  const tSkills = useTranslations("data.skills");
-  const tEdu = useTranslations("data.education");
 
   return (
     <div className="mx-auto max-w-5xl px-6 py-20 pb-32 md:px-12 lg:px-24">
@@ -60,7 +57,7 @@ const AboutPage = () => {
           {skills.map((group) => (
             <motion.div key={group.key} {...fadeUp}>
               <h3 className="mb-4 text-sm font-semibold text-accent-purple uppercase tracking-wider">
-                {tSkills(group.key)}
+                {group.label}
               </h3>
               <div className="space-y-3">
                 {group.skills.map((skill) => (
@@ -86,7 +83,7 @@ const AboutPage = () => {
         </motion.div>
         <div className="mt-8 grid gap-4 md:grid-cols-2">
           {education.map((edu) => (
-            <motion.div key={edu.institution} {...fadeUp}>
+            <motion.div key={edu.key} {...fadeUp}>
               <GlassCard hoverGlow className="p-6">
                 <p className="text-xs font-mono text-accent-cyan">
                   {edu.period}
@@ -95,11 +92,13 @@ const AboutPage = () => {
                   {edu.institution}
                 </h3>
                 <p className="text-sm text-accent-magenta">
-                  {tEdu(`${edu.key}.degree`)} — {edu.degreeTitle}
+                  {edu.degreeTitle ? `${edu.degree} — ${edu.degreeTitle}` : edu.degree}
                 </p>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  {tEdu(`${edu.key}.field`)}
-                </p>
+                {edu.field && (
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    {edu.field}
+                  </p>
+                )}
               </GlassCard>
             </motion.div>
           ))}
@@ -116,7 +115,7 @@ const AboutPage = () => {
         </motion.div>
         <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {certificates.map((cert) => (
-            <motion.div key={cert.name} {...fadeUp}>
+            <motion.div key={`${cert.name}-${cert.issuer}`} {...fadeUp}>
               <GlassCard hoverGlow className="p-6">
                 <p className="text-xs font-mono text-accent-cyan">
                   {cert.year}

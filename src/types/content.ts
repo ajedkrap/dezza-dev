@@ -35,3 +35,36 @@ export interface Project {
   shortCompany: string;
   shortStack: string[];
 }
+
+export interface Education {
+  key: string;
+  institution: string;
+  degreeTitle?: string;
+  period: string;
+  degree: string;
+  field?: string;
+}
+
+export interface Certificate {
+  name: string;
+  issuer: string;
+  year: string;
+}
+
+export interface SkillCategory {
+  key: string;
+  label: string;
+  skills: { name: string; level: number }[];
+}
+
+export interface StackGroup {
+  key: string;
+  label: string;
+  items: { name: string; icon?: string; iconSize?: number }[];
+}
+
+export interface AboutContent {
+  skills: SkillCategory[];
+  education: Education[];
+  certificates: Certificate[];
+}

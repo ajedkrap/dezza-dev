@@ -75,24 +75,6 @@
         "japanese": { "name": "日本語", "level": "JLPT N4" },
         "korean": { "name": "韓国語", "level": "TOPIK I Level 2" }
       }
-    },
-    "education": {
-      "binus": {
-        "degree": "学士号",
-        "field": "コンピュータサイエンス"
-      }
-    },
-    "skills": {
-      "mobile": "モバイル",
-      "languages": "プログラミング言語",
-      "backend": "バックエンド & データベース"
-    },
-    "techStack": {
-      "languages": "プログラミング言語",
-      "framework": "フレームワーク",
-      "backend": "バックエンド & データベース",
-      "codeEditor": "コードエディタ",
-      "misc": "その他"
     }
   }
 }

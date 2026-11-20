@@ -6,21 +6,22 @@ import CareerSection from "../organisms/CareerSection";
 import ProjectsSection from "../organisms/ProjectsSection";
 import TechStackSection from "../organisms/TechStackSection";
 import ContactSection from "../organisms/ContactSection";
-import type { Experience, Project } from "@/types/content";
+import type { Experience, Project, StackGroup } from "@/types/content";
 
 interface HomePageProps {
   experiences: Experience[];
   projects: Project[];
+  techStack: StackGroup[];
 }
 
-const HomePage = ({ experiences, projects }: HomePageProps) => {
+const HomePage = ({ experiences, projects, techStack }: HomePageProps) => {
   return (
     <div className="flex flex-col">
       <HeroSection />
       <IntroSection />
       <CareerSection experiences={experiences} />
       <ProjectsSection projects={projects} />
-      <TechStackSection />
+      <TechStackSection groups={techStack} />
       <ContactSection />
     </div>
   );

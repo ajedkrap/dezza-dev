@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
-import { techStack } from "@/data/skills";
 import { useTranslations } from "next-intl";
 import { IconType } from "react-icons";
+import type { StackGroup } from "@/types/content";
 
 import { LiaJava } from "react-icons/lia";
 import { VscVscode } from "react-icons/vsc";
@@ -66,6 +66,10 @@ const fadeUp = {
   transition: { duration: 0.6 },
 };
 
+/**
+ * Icons available to `stack_items.icon` in Supabase. A new icon name must be
+ * imported and added here; unknown names render the badge without an icon.
+ */
 const iconMap: Record<string, IconType> = {
   SiReact,
   SiExpo,
@@ -122,9 +126,8 @@ const iconMap: Record<string, IconType> = {
   SiPython,
 };
 
-const TechStackSection = () => {
+const TechStackSection = ({ groups }: { groups: StackGroup[] }) => {
   const t = useTranslations("sections");
-  const tStack = useTranslations("data.techStack");
   return (
     <section className="px-6 py-20 md:px-12 lg:px-24">
       <motion.h2
@@ -135,14 +138,14 @@ const TechStackSection = () => {
       </motion.h2>
 
       <div className="space-y-8">
-        {techStack.map((group) => (
+        {groups.map((group) => (
           <motion.div key={group.key} {...fadeUp}>
             <h3 className="mb-4 text-xs font-semibold uppercase tracking-wider text-accent-purple">
-              {tStack(group.key)}
+              {group.label}
             </h3>
             <div className="flex flex-wrap gap-3">
               {group.items.map((item) => {
-                const Icon = iconMap[item.icon];
+                const Icon = item.icon ? iconMap[item.icon] : undefined;
                 return (
                   <div
                     key={item.name}
@@ -150,7 +153,7 @@ const TechStackSection = () => {
                   >
                     {Icon && (
                       <Icon
-                        size={item?.library ? 20 : 16}
+                        size={item.iconSize ?? 16}
                         className="text-accent-cyan"
                       />
                     )}

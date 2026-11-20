@@ -75,24 +75,6 @@
         "japanese": { "name": "Jepang", "level": "JLPT N4" },
         "korean": { "name": "Korea", "level": "TOPIK I Level 2" }
       }
-    },
-    "education": {
-      "binus": {
-        "degree": "Sarjana",
-        "field": "Ilmu Komputer"
-      }
-    },
-    "skills": {
-      "mobile": "Mobile",
-      "languages": "Bahasa Pemrograman",
-      "backend": "Backend & Database"
-    },
-    "techStack": {
-      "languages": "Bahasa Pemrograman",
-      "framework": "Framework",
-      "backend": "Backend & Database",
-      "codeEditor": "Code Editor",
-      "misc": "Lainnya"
     }
   }
 }

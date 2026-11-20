@@ -2,7 +2,12 @@ import { createClient } from "@supabase/supabase-js";
 import { unstable_cache } from "next/cache";
 import { routing } from "../../i18n/routing";
 import { getStorageUrl } from "@/lib/supabase";
-import type { Experience, Project } from "@/types/content";
+import type {
+  AboutContent,
+  Experience,
+  Project,
+  StackGroup,
+} from "@/types/content";
 
 /** Cache tag for everything read from Supabase; flushed by /api/revalidate. */
 export const CONTENT_TAG = "portfolio-content";
@@ -141,5 +146,111 @@ export const getProjects = unstable_cache(
     });
   },
   ["projects"],
+  { tags: [CONTENT_TAG], revalidate: REVALIDATE_SECONDS },
+);
+
+interface LabelRow {
+  locale: string;
+  label: string;
+}
+
+interface EducationRow {
+  key: string;
+  institution: string;
+  degree_title: string | null;
+  period: string;
+  education_translations: { locale: string; degree: string; field: string | null }[];
+}
+
+interface SkillCategoryRow {
+  key: string;
+  skill_category_translations: LabelRow[];
+  skills: { name: string; level: number }[];
+}
+
+interface StackGroupRow {
+  key: string;
+  stack_group_translations: LabelRow[];
+  stack_items: { name: string; icon: string | null; icon_size: number | null }[];
+}
+
+export const getAboutContent = unstable_cache(
+  async (locale: string): Promise<AboutContent> => {
+    const db = getClient();
+    const locales = [locale, FALLBACK_LOCALE];
+
+    const [edu, certs, skills] = await Promise.all([
+      db
+        .from("education")
+        .select("key, institution, degree_title, period, education_translations(locale, degree, field)")
+        .in("education_translations.locale", locales)
+        .order("sort_order")
+        .returns<EducationRow[]>(),
+      db
+        .from("certificates")
+        .select("name, issuer, year")
+        .order("sort_order")
+        .returns<{ name: string; issuer: string; year: string }[]>(),
+      db
+        .from("skill_categories")
+        .select("key, skill_category_translations(locale, label), skills(name, level, sort_order)")
+        .in("skill_category_translations.locale", locales)
+        .order("sort_order")
+        .order("sort_order", { referencedTable: "skills" })
+        .returns<SkillCategoryRow[]>(),
+    ]);
+    for (const [name, res] of [["education", edu], ["certificates", certs], ["skills", skills]] as const) {
+      if (res.error) throw new Error(`Failed to load ${name}: ${res.error.message}`);
+    }
+
+    return {
+      education: edu.data!.flatMap((row) => {
+        const t = pickLocale(row.education_translations, locale);
+        if (!t) return [];
+        return [
+          {
+            key: row.key,
+            institution: row.institution,
+            degreeTitle: row.degree_title ?? undefined,
+            period: row.period,
+            degree: t.degree,
+            field: t.field ?? undefined,
+          },
+        ];
+      }),
+      certificates: certs.data!,
+      skills: skills.data!.map((row) => ({
+        key: row.key,
+        label: pickLocale(row.skill_category_translations, locale)?.label ?? row.key,
+        skills: row.skills.map(({ name, level }) => ({ name, level })),
+      })),
+    };
+  },
+  ["about"],
+  { tags: [CONTENT_TAG], revalidate: REVALIDATE_SECONDS },
+);
+
+export const getTechStack = unstable_cache(
+  async (locale: string): Promise<StackGroup[]> => {
+    const { data, error } = await getClient()
+      .from("stack_groups")
+      .select("key, stack_group_translations(locale, label), stack_items(name, icon, icon_size, sort_order)")
+      .in("stack_group_translations.locale", [locale, FALLBACK_LOCALE])
+      .order("sort_order")
+      .order("sort_order", { referencedTable: "stack_items" })
+      .returns<StackGroupRow[]>();
+    if (error) throw new Error(`Failed to load tech stack: ${error.message}`);
+
+    return data.map((row) => ({
+      key: row.key,
+      label: pickLocale(row.stack_group_translations, locale)?.label ?? row.key,
+      items: row.stack_items.map((it) => ({
+        name: it.name,
+        icon: it.icon ?? undefined,
+        iconSize: it.icon_size ?? undefined,
+      })),
+    }));
+  },
+  ["tech-stack"],
   { tags: [CONTENT_TAG], revalidate: REVALIDATE_SECONDS },
 );
