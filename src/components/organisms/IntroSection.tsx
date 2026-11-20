@@ -12,7 +12,7 @@ const fadeUp = {
   transition: { duration: 0.6 },
 };
 
-const IntroSection = () => {
+const IntroSection = ({ years }: { years: number }) => {
   const t = useTranslations("sections");
   const tPersonal = useTranslations("data.personal");
 
@@ -32,7 +32,7 @@ const IntroSection = () => {
                 {t("about")}
               </h2>
               <p className="text-base leading-relaxed text-muted-foreground/90 md:text-lg">
-                {tPersonal("summary")}
+                {tPersonal("summary", { years })}
               </p>
 
               {/* Location + socials */}

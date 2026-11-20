@@ -18,7 +18,18 @@ const fadeUp = {
   transition: { duration: 0.6 },
 };
 
-const AboutPage = ({ skills, education, certificates }: AboutContent) => {
+interface AboutPageProps extends AboutContent {
+  years: number;
+  appsShipped: number;
+}
+
+const AboutPage = ({
+  skills,
+  education,
+  certificates,
+  years,
+  appsShipped,
+}: AboutPageProps) => {
   const t = useTranslations("sections");
   const tPersonal = useTranslations("data.personal");
 
@@ -30,7 +41,7 @@ const AboutPage = ({ skills, education, certificates }: AboutContent) => {
         <div className="mt-6 flex flex-col items-center gap-8 md:flex-row md:items-start md:gap-10">
           <AvatarGallery size="lg" />
           <p className="max-w-2xl text-base text-muted-foreground leading-relaxed">
-            {tPersonal("summary")}
+            {tPersonal("summary", { years })}
           </p>
         </div>
       </motion.div>
@@ -43,8 +54,8 @@ const AboutPage = ({ skills, education, certificates }: AboutContent) => {
         transition={{ duration: 0.6, delay: 0.8 }}
       >
         <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-          <StatCard value="4+" label={t("yearsExperience")} />
-          <StatCard value="6+" label={t("appsShipped")} />
+          <StatCard value={`${years}+`} label={t("yearsExperience")} />
+          <StatCard value={`${appsShipped}+`} label={t("appsShipped")} />
         </div>
       </motion.div>
 

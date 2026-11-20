@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import AboutPage from "@/components/templates/AboutPage";
-import { getAboutContent } from "@/lib/content";
+import { getAboutContent, getProjects } from "@/lib/content";
+import { getYearsOfExperience } from "@/data/personal";
 
 export const metadata: Metadata = {
   title: "About",
@@ -19,8 +20,17 @@ const About = async ({
   params: Promise<{ locale: string }>;
 }) => {
   const { locale } = await params;
-  const content = await getAboutContent(locale);
-  return <AboutPage {...content} />;
+  const [content, projects] = await Promise.all([
+    getAboutContent(locale),
+    getProjects(locale),
+  ]);
+  return (
+    <AboutPage
+      {...content}
+      years={getYearsOfExperience()}
+      appsShipped={projects.length}
+    />
+  );
 };
 
 export default About;
