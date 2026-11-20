@@ -14,7 +14,13 @@ const fadeUp = {
   transition: { duration: 0.6 },
 };
 
-const ExperiencePage = ({ experiences }: { experiences: Experience[] }) => {
+const ExperiencePage = ({
+  experiences,
+  years,
+}: {
+  experiences: Experience[];
+  years: number;
+}) => {
   const t = useTranslations("sections");
   const tExp = useTranslations("experience");
 
@@ -26,13 +32,14 @@ const ExperiencePage = ({ experiences }: { experiences: Experience[] }) => {
           subtitle={t("careerSubtitle")}
         />
         <p className="mt-4 max-w-2xl text-sm text-muted-foreground leading-relaxed">
-          {tExp("intro")}
+          {tExp("intro", { years })}
         </p>
       </motion.div>
 
       {/* Platform filter badges */}
       <motion.div className="mt-8 flex flex-wrap gap-2" {...fadeUp}>
         <GlassBadge color="cyan">React Native</GlassBadge>
+        <GlassBadge color="blue">Flutter</GlassBadge>
         <GlassBadge color="green">Android</GlassBadge>
         <GlassBadge color="white">iOS</GlassBadge>
       </motion.div>
