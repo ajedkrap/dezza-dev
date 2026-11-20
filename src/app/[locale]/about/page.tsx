@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import AboutPage from "@/components/templates/AboutPage";
+import { getAboutContent } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "About",
@@ -12,8 +13,14 @@ export const metadata: Metadata = {
   },
 };
 
-const About = () => {
-  return <AboutPage />;
+const About = async ({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) => {
+  const { locale } = await params;
+  const content = await getAboutContent(locale);
+  return <AboutPage {...content} />;
 };
 
 export default About;
