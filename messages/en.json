@@ -55,7 +55,7 @@
     "required": "Please fill in all fields."
   },
   "experience": {
-    "intro": "4+ years building mobile applications across fintech, government, and education sectors. From sole developer to team collaborator.",
+    "intro": "{years}+ years building mobile applications across fintech, government, and education sectors. From sole developer to team collaborator.",
     "viewCaseStudy": "Case Study"
   },
   "projectsPage": {
@@ -67,7 +67,7 @@
   "data": {
     "personal": {
       "title": "Fullstack Mobile Engineer",
-      "summary": "Passionate mobile developer with 4+ years experience and a keen eye for innovation. With a solid foundation in mobile app development and a proactive approach to staying ahead of emerging trends, I thrive on creating intuitive solutions that enhance productivity and connectivity.",
+      "summary": "Passionate mobile developer with {years}+ years experience and a keen eye for innovation. With a solid foundation in mobile app development and a proactive approach to staying ahead of emerging trends, I thrive on creating intuitive solutions that enhance productivity and connectivity.",
       "location": "Bekasi, Indonesia",
       "languages": {
         "indonesian": { "name": "Bahasa Indonesia", "level": "Native" },

@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
 import ExperiencePage from "@/components/templates/ExperiencePage";
 import { getExperiences } from "@/lib/content";
+import { getYearsOfExperience } from "@/data/personal";
 
-export const metadata: Metadata = {
-  title: "Experience",
-  description:
-    "Career timeline of Dezza Rizqi — 4+ years building mobile apps across fintech, government, and education sectors.",
-  openGraph: {
-    title: "Experience | Dezza Rizqi",
-    description:
-      "Career timeline — 4+ years building mobile apps across fintech, government, and education sectors.",
-  },
-};
+export function generateMetadata(): Metadata {
+  const years = getYearsOfExperience();
+  return {
+    title: "Experience",
+    description: `Career timeline of Dezza Rizqi — ${years}+ years building mobile apps across fintech, government, and education sectors.`,
+    openGraph: {
+      title: "Experience | Dezza Rizqi",
+      description: `Career timeline — ${years}+ years building mobile apps across fintech, government, and education sectors.`,
+    },
+  };
+}
 
 export default async function Experience({
   params,
@@ -20,5 +22,7 @@ export default async function Experience({
 }) {
   const { locale } = await params;
   const experiences = await getExperiences(locale);
-  return <ExperiencePage experiences={experiences} />;
+  return (
+    <ExperiencePage experiences={experiences} years={getYearsOfExperience()} />
+  );
 }

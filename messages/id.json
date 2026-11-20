@@ -55,7 +55,7 @@
     "required": "Mohon isi semua kolom."
   },
   "experience": {
-    "intro": "4+ tahun membangun aplikasi mobile di berbagai sektor fintech, pemerintah, dan pendidikan. Dari pengembang sendiri hingga kolaborator tim.",
+    "intro": "{years}+ tahun membangun aplikasi mobile di berbagai sektor fintech, pemerintah, dan pendidikan. Dari pengembang sendiri hingga kolaborator tim.",
     "viewCaseStudy": "Studi Kasus"
   },
   "projectsPage": {
@@ -67,7 +67,7 @@
   "data": {
     "personal": {
       "title": "Fullstack Mobile Engineer",
-      "summary": "Pengembang mobile yang bersemangat dengan pengalaman 4+ tahun dan memiliki ketertarikan tinggi terhadap inovasi. Dengan fondasi kuat dalam pengembangan aplikasi mobile dan pendekatan proaktif terhadap tren teknologi terbaru, saya senang menciptakan solusi intuitif yang meningkatkan produktivitas dan konektivitas.",
+      "summary": "Pengembang mobile yang bersemangat dengan pengalaman {years}+ tahun dan memiliki ketertarikan tinggi terhadap inovasi. Dengan fondasi kuat dalam pengembangan aplikasi mobile dan pendekatan proaktif terhadap tren teknologi terbaru, saya senang menciptakan solusi intuitif yang meningkatkan produktivitas dan konektivitas.",
       "location": "Bekasi, Indonesia",
       "languages": {
         "indonesian": { "name": "Bahasa Indonesia", "level": "Bahasa Ibu" },

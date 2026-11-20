@@ -7,6 +7,7 @@ import GlassNav from "@/components/organisms/GlassNav";
 import Gradient from "@/components/atoms/Gradient";
 import PageTransition from "@/components/organisms/PageTransition";
 import LiquidGlassFilter from "@/components/atoms/LiquidGlassFilter";
+import { getYearsOfExperience } from "@/data/personal";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -20,7 +21,7 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ["400", "500", "600"],
 });
 
-export const metadata: Metadata = {
+export const generateMetadata = (): Metadata => ({
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL ?? "https://dezza.dev",
   ),
@@ -28,8 +29,7 @@ export const metadata: Metadata = {
     default: "Dezza Rizqi — Fullstack Mobile",
     template: "%s | Dezza Rizqi",
   },
-  description:
-    "Portfolio of Dezza Rizqi, a Mobile Engineer with 4+ years of experience in React Native, Flutter, and fullstack development.",
+  description: `Portfolio of Dezza Rizqi, a Mobile Engineer with ${getYearsOfExperience()}+ years of experience in React Native, Flutter, and fullstack development.`,
   openGraph: {
     type: "website",
     siteName: "Dezza Rizqi — Portfolio",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   other: {
     "mobile-web-app-capable": "yes",
   },
-};
+});
 
 export const viewport: Viewport = {
   themeColor: "#09090B",

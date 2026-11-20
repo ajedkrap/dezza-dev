@@ -12,13 +12,14 @@ interface HomePageProps {
   experiences: Experience[];
   projects: Project[];
   techStack: StackGroup[];
+  years: number;
 }
 
-const HomePage = ({ experiences, projects, techStack }: HomePageProps) => {
+const HomePage = ({ experiences, projects, techStack, years }: HomePageProps) => {
   return (
     <div className="flex flex-col">
       <HeroSection />
-      <IntroSection />
+      <IntroSection years={years} />
       <CareerSection experiences={experiences} />
       <ProjectsSection projects={projects} />
       <TechStackSection groups={techStack} />
